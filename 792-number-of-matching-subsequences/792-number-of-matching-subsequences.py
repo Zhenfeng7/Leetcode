@@ -20,6 +20,7 @@ class Solution:
         
         ps, pt = 0, 0
         while pt < len(t) and ps < len(sub):
+            if ps == len(sub): return True
             if sub[ps] == t[pt]:
                 
                 ps += 1
