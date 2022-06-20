@@ -1,16 +1,9 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        i = 0
-        while i < len(nums):
-            j = i + 1
-            while j < len(nums):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
-                else:
-                    j += 1
-            i += 1
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        record = {}
+        for i in range(len(nums)):
+            if target - nums[i] in record:
+                return [i, record[target - nums[i]]]
+            record[nums[i]] = i
+        return False
+            
