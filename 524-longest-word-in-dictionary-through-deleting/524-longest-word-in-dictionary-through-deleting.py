@@ -3,10 +3,7 @@ class Solution:
         result = ""
         for i in dictionary:
             if self._isSubsequence(i, s):
-                if len(i) > len(result):
-                    result = i
-                elif len(i) == len(result):
-                    result = min(result, i)
+                result = min(result, i, key = lambda x: (-len(x), x))
                 
                 
         return result
