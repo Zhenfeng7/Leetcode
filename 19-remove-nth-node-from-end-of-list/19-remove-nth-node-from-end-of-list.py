@@ -10,8 +10,7 @@ class Solution:
         for i in range(n - 1):
             fast = fast.next
         if fast.next is None:
-            head = head.next
-            return head
+            return head.next
         
         while fast.next.next is not None:
             fast = fast.next
